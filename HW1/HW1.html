@@ -218,23 +218,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>            counterNoSwitch <span class="op">=</span> counterNoSwitch</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Success Rate No Switch: "</span> <span class="op">+</span> <span class="bu">str</span>(counterNoSwitch<span class="op">/</span><span class="dv">1000</span>)) </span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Success Rate Switch: "</span> <span class="op">+</span> <span class="bu">str</span>(counterSwitch<span class="op">/</span><span class="dv">1000</span>)) </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="co">#return first the proportion of wins for not switch and then the proportion fo wins for switching</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> counterNoSwitch<span class="op">/</span><span class="dv">1000</span>, counterSwitch<span class="op">/</span><span class="dv">1000</span></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co">#print(montyHallTrial(3, True))</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">#print(montyHallTrial(5, True))</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>montyHallTrials(<span class="dv">3</span>, <span class="dv">1000</span>)</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>montyHallTrials(<span class="dv">5</span>, <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="co">#print(montyHallTrial(3, True))</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co">#print(montyHallTrial(5, True))</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Proportion of wins for 3 doors when not switching doors: "</span> <span class="op">+</span> <span class="bu">str</span>(montyHallTrials(<span class="dv">3</span>,<span class="dv">1000</span>)[<span class="dv">0</span>]))</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Proportion of wins for 3 doors when switching doors: "</span> <span class="op">+</span> <span class="bu">str</span>(montyHallTrials(<span class="dv">3</span>,<span class="dv">1000</span>)[<span class="dv">1</span>])) </span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Proportion of wins for 5 doors when switching doors: "</span> <span class="op">+</span> <span class="bu">str</span>(montyHallTrials(<span class="dv">5</span>,<span class="dv">1000</span>)[<span class="dv">0</span>])) </span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Proportion of wins for 5 doors trials when switching doors: "</span> <span class="op">+</span> <span class="bu">str</span>(montyHallTrials(<span class="dv">5</span>,<span class="dv">1000</span>)[<span class="dv">1</span>])) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Success Rate No Switch: 0.337
-Success Rate Switch: 0.668
-Success Rate No Switch: 0.189
-Success Rate Switch: 0.293</code></pre>
+<pre><code>Proportion of wins for 3 doors when not switching doors: 0.327
+Proportion of wins for 3 doors when switching doors: 0.673
+
+Proportion of wins for 5 doors when switching doors: 0.199
+Proportion of wins for 5 doors trials when switching doors: 0.264</code></pre>
 </div>
 </div>
-<p>#Question 4:</p>
+</section>
+<section id="question-4" class="level1">
+<h1>Question 4:</h1>
 <p>Write a function to do a Monte Carlo approximation of pi. The function takes a Monte Carlo sample size n as input, and returns a point estimate of pi and a 95% confidence interval. Apply your function with sample size 1000, 2000, 4000, and 8000. Comment on the results.</p>
 <div class="cell" data-execution_count="2">
 <details>
@@ -266,19 +274,38 @@ Success Rate Switch: 0.293</code></pre>
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        squarePoints <span class="op">=</span> squarePoints <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">#formula for pi</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">4</span> <span class="op">*</span> (circlePoints<span class="op">/</span>squarePoints)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="co">#formula for estimate of pi</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    pi <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> (circlePoints<span class="op">/</span>squarePoints)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monteCarlo(<span class="dv">1000</span>))</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monteCarlo(<span class="dv">2000</span>))</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monteCarlo(<span class="dv">4000</span>))</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monteCarlo(<span class="dv">8000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#formula for calculating standard deviation of the estimate of pi</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    error <span class="op">=</span> <span class="fl">1.96</span> <span class="op">*</span> ((pi<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(circlePoints<span class="op">/</span>squarePoints))<span class="op">/</span>n)<span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">#return pi and confidence interval</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pi, (pi<span class="op">-</span>error, pi<span class="op">+</span>error)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The Monte Carlo approximation of pi for a sample size of 1000 is: "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">1000</span>)[<span class="dv">0</span>]))</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The corresponding confidence interval for that estimate is:  "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">1000</span>)[<span class="dv">1</span>]))</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">The Monte Carlo approximation of pi for a sample size of 2000 is: "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">2000</span>)[<span class="dv">0</span>]))</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The corresponding confidence interval for that estimate is:  "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">2000</span>)[<span class="dv">1</span>]))</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">The Monte Carlo approximation of pi for a sample size of 4000 is: "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">4000</span>)[<span class="dv">0</span>]))</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The corresponding confidence interval for that estimate is:  "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">4000</span>)[<span class="dv">1</span>]))</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">The Monte Carlo approximation of pi for a sample size of 8000 is: "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">800</span>)[<span class="dv">0</span>]))</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The corresponding confidence interval for that estimate is:  "</span> <span class="op">+</span> <span class="bu">str</span>(monteCarlo(<span class="dv">8000</span>)[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>3.124
-3.178
-3.155
-3.1395</code></pre>
+<pre><code>The Monte Carlo approximation of pi for a sample size of 1000 is: 3.212
+The corresponding confidence interval for that estimate is:  (3.1753588291200003, 3.17664117088)
+
+The Monte Carlo approximation of pi for a sample size of 2000 is: 3.136
+The corresponding confidence interval for that estimate is:  (3.1316669744400003, 3.13233302556)
+
+The Monte Carlo approximation of pi for a sample size of 4000 is: 3.101
+The corresponding confidence interval for that estimate is:  (3.16783855872, 3.16816144128)
+
+The Monte Carlo approximation of pi for a sample size of 8000 is: 3.14
+The corresponding confidence interval for that estimate is:  (3.13191674361, 3.13208325639)</code></pre>
 </div>
 </div>
 </section>
